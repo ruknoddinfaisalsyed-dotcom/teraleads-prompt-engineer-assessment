@@ -1,11 +1,88 @@
 # Teraleads Prompt Engineer Assessment
 
 Candidate: SYED RUKNODDIN FAISAL  
-Email: ruknoddinfaisalsyed@gmail.com
+Email: ruknoddinfaisalsyed@gmail.com  
 
-This repository contains the Python implementation for the Teraleads Prompt Engineer assessment.
+This repository contains my technical submission for the Teraleads Prompt Engineer assessment.
 
-Contents:
-- Python reminder generation script
-- JSON appointment parsing
-- Voice prompt message generation
+The goal of this project is to demonstrate practical skills in:
+- Prompt engineering for voice systems
+- JSON parsing using Python
+- Automated reminder generation
+- Integration-ready architecture for CRM systems
+
+---
+
+## Repository Structure
+
+teraleads-prompt-engineer-assessment
+│
+├── appointment_reminder.py
+└── README.md
+
+appointment_reminder.py  
+Python script that parses appointment data from JSON and generates TTS-ready reminder messages.
+
+README.md  
+Documentation describing the structure and integration approach.
+
+---
+
+## Features
+
+• JSON appointment data parsing  
+• Automated reminder message generation  
+• Voice prompt annotations for TTS systems  
+• Modular design for CRM workflow automation  
+
+---
+
+## Example Output
+
+<friendly tone>
+
+Hello Rahul Sharma,
+
+<pause:400ms>
+
+This is a reminder for your appointment scheduled on March 12 at 4:00 PM.
+
+<pause:500ms>
+
+If you need to reschedule, please contact us.
+
+---
+
+## Production Integration
+
+In a production environment, the generated reminder text would be sent to a Text-to-Speech (TTS) API such as:
+
+- Amazon Polly  
+- Google Cloud TTS  
+- ElevenLabs  
+
+The system workflow would be:
+
+1. Generate reminder message  
+2. Send message to TTS API  
+3. Receive audio response  
+4. Deliver automated voice call or notification  
+5. Log delivery outcome in CRM  
+
+---
+
+## Possible Improvements
+
+Future improvements could include:
+
+• Speech recognition confidence validation  
+• Automatic retry for unanswered calls  
+• SMS fallback if voice call fails  
+• Dynamic personalization based on CRM data  
+
+---
+
+## Author
+
+SYED RUKNODDIN FAISAL  
+ruknoddinfaisalsyed@gmail.com
