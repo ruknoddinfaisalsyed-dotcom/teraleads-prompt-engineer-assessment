@@ -1,32 +1,68 @@
 import json
 
+# Simulated appointment data
 appointments_json = """
 [
-    {"name": "Rahul Sharma", "phone": "9876543210", "date": "March 12", "time": "4:00 PM"},
-    {"name": "Priya Mehta", "phone": "9123456780", "date": "March 13", "time": "11:30 AM"},
-    {"name": "Amit Verma", "phone": "9988776655", "date": "March 14", "time": "2:00 PM"}
+    {
+        "name": "Rahul Sharma",
+        "phone": "9876543210",
+        "date": "March 12",
+        "time": "4:00 PM"
+    },
+    {
+        "name": "Priya Mehta",
+        "phone": "9123456780",
+        "date": "March 13",
+        "time": "11:30 AM"
+    },
+    {
+        "name": "Amit Verma",
+        "phone": "9988776655",
+        "date": "March 14",
+        "time": "2:00 PM"
+    }
 ]
 """
 
 def generate_reminder(appointment_data):
+    """
+    Generate TTS-ready reminder messages from appointment data
+    """
 
-    for appt in appointment_data:
+    for appointment in appointment_data:
 
         message = f"""
 <friendly tone>
 
-Hello {appt['name']},
+Hello {appointment['name']},
 
 <pause:400ms>
 
-This is a reminder for your appointment on {appt['date']} at {appt['time']}.
+This is a reminder for your upcoming appointment scheduled on
+{appointment['date']} at {appointment['time']}.
 
 <pause:500ms>
 
 If you need to reschedule, please contact us.
+
+Thank you and have a great day!
 """
 
         print(message)
 
-data = json.loads(appointments_json)
-generate_reminder(data)
+
+def main():
+    try:
+        data = json.loads(appointments_json)
+        generate_reminder(data)
+
+    except json.JSONDecodeError:
+        print("Error: Invalid JSON format.")
+
+
+# Debugging Scenario:
+# Issue: JSONDecodeError caused by malformed JSON (extra comma or missing quotes)
+# Fix: Ensure valid JSON syntax before calling json.loads()
+
+if __name__ == "__main__":
+    main()
